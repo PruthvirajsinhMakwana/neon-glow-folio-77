@@ -193,30 +193,6 @@ const TestimonialsSection = () => {
             ))}
           </div>
         </div>
-
-        {/* Client Logos Row */}
-        <div 
-          className={`mt-16 transform transition-all duration-1000 delay-500 ${
-            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-          }`}
-        >
-          <div className="text-center mb-8">
-            <p className="text-muted-foreground">Trusted by amazing companies</p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-50">
-            {['Company A', 'Company B', 'Company C', 'Company D'].map((company, index) => (
-              <div 
-                key={company}
-                className="glass-card rounded-lg p-6 text-center hover:opacity-75 transition-opacity duration-300"
-              >
-                <div className="text-2xl font-bold gradient-text">
-                  {company}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

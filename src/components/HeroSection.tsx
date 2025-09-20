@@ -96,13 +96,15 @@ const HeroSection = () => {
           ))}
         </div>
 
-        {/* Scroll indicator */}
+        {/* Enhanced Scroll indicator */}
         <button
           onClick={scrollToNext}
-          className="animate-bounce text-muted-foreground hover:text-primary transition-colors duration-300"
+          className="group relative animate-bounce hover:animate-none text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"
           aria-label="Scroll to next section"
         >
-          <ChevronDown size={32} />
+          <div className="absolute inset-0 rounded-full bg-primary/20 scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+          <ChevronDown size={32} className="relative z-10 group-hover:translate-y-1 transition-transform duration-300" />
+          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </button>
       </div>
 
