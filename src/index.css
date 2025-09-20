@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Futuristic Portfolio Design System - Dark theme with neon gradients */
+
+@layer base {
+  :root {
+    /* Base colors - Dark cyberpunk theme */
+    --background: 220 20% 5%;  /* #0C0E14 */
+    --foreground: 0 0% 98%;    /* Nearly white */
+
+    /* Card colors - Dark glass effect */
+    --card: 220 15% 8%;        /* Slightly lighter than background */
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 15% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Neon accent colors */
+    --primary: 180 100% 50%;    /* Neon cyan */
+    --primary-foreground: 220 20% 5%;
+
+    --secondary: 260 83% 68%;   /* Neon violet */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 10% 15%;       /* Muted dark */
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 300 100% 50%;     /* Neon magenta */
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Subtle borders and inputs */
+    --border: 220 15% 20%;
+    --input: 220 15% 12%;
+    --ring: 180 100% 50%;       /* Cyan ring */
+
+    /* Neon gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(180 100% 50%), hsl(260 83% 68%));
+    --gradient-secondary: linear-gradient(135deg, hsl(260 83% 68%), hsl(300 100% 50%));
+    --gradient-tertiary: linear-gradient(135deg, hsl(180 100% 50%), hsl(300 100% 50%));
+    
+    /* Glow effects */
+    --glow-primary: 0 0 20px hsl(180 100% 50% / 0.5);
+    --glow-secondary: 0 0 20px hsl(260 83% 68% / 0.5);
+    --glow-accent: 0 0 20px hsl(300 100% 50% / 0.5);
+    
+    /* Glass effect */
+    --glass-bg: hsl(220 15% 12% / 0.8);
+    --glass-border: hsl(0 0% 100% / 0.1);
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Glass card effect */
+  .glass-card {
+    @apply backdrop-blur-md border border-white/10;
+    background: var(--glass-bg);
+  }
+
+  /* Neon glow button */
+  .neon-button {
+    @apply relative overflow-hidden rounded-lg px-6 py-3 font-medium transition-all duration-300;
+    background: var(--gradient-primary);
+    box-shadow: var(--glow-primary);
+  }
+
+  .neon-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--glow-primary), 0 10px 20px hsl(180 100% 50% / 0.3);
+  }
+
+  .neon-button-secondary {
+    @apply relative overflow-hidden rounded-lg px-6 py-3 font-medium transition-all duration-300;
+    background: var(--gradient-secondary);
+    box-shadow: var(--glow-secondary);
+  }
+
+  .neon-button-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--glow-secondary), 0 10px 20px hsl(260 83% 68% / 0.3);
+  }
+
+  /* Animated gradient text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 3s ease-in-out infinite;
+  }
+
+  /* Particle container */
+  .particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* Scroll reveal animations */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Glowing border animation */
+  .glow-border {
+    position: relative;
+    border: 1px solid transparent;
+    background: linear-gradient(var(--glass-bg), var(--glass-bg)) padding-box,
+                var(--gradient-primary) border-box;
+    border-radius: var(--radius);
+  }
+
+  .glow-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    background: var(--gradient-primary);
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
