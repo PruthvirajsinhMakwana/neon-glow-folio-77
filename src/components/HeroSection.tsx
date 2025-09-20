@@ -32,9 +32,9 @@ const HeroSection = () => {
               textVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
             }`}
           >
-            <span className="gradient-text">Creative</span>
+            <span className="gradient-text">PRUTHVIRAJ</span>
             <br />
-            <span className="text-foreground">Portfolio</span>
+            <span className="text-foreground">MAKWANA</span>
           </h1>
         </div>
 
@@ -45,9 +45,9 @@ const HeroSection = () => {
               textVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
             }`}
           >
-            Designing digital experiences through{' '}
-            <span className="gradient-text font-semibold">innovation</span> and{' '}
-            <span className="gradient-text font-semibold">creativity</span>
+            B.Voc IT Student passionate about{' '}
+            <span className="gradient-text font-semibold">sports commentary</span> and{' '}
+            <span className="gradient-text font-semibold">tech development</span>
           </p>
         </div>
 
@@ -65,7 +65,7 @@ const HeroSection = () => {
           </button>
           <button 
             className="neon-button-secondary text-foreground font-semibold"
-            onClick={() => window.open('https://wa.me/your-number', '_blank')}
+            onClick={() => window.open('https://wa.me/917016592727?text=Hello%20Pruthviraj!%20I%20would%20like%20to%20discuss%20a%20project%20with%20you.', '_blank')}
           >
             Hire Me
           </button>
@@ -78,10 +78,10 @@ const HeroSection = () => {
           }`}
         >
           {[
-            { icon: Github, href: '#', label: 'GitHub' },
-            { icon: Linkedin, href: '#', label: 'LinkedIn' },
-            { icon: Twitter, href: '#', label: 'Twitter' },
-            { icon: Instagram, href: '#', label: 'Instagram' },
+            { icon: Github, href: 'https://github.com/PruthvirajsinhMakwana', label: 'GitHub' },
+            { icon: Linkedin, href: 'https://www.linkedin.com/in/makwana-pruthvirajsinh-064113295/', label: 'LinkedIn' },
+            { icon: Twitter, href: 'https://www.facebook.com/pruthvirajsinh.makwana.12/', label: 'Facebook' },
+            { icon: Instagram, href: 'https://www.instagram.com/pruthvirajsinh__makwana/', label: 'Instagram' },
           ].map(({ icon: Icon, href, label }) => (
             <a
               key={label}

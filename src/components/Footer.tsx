@@ -4,11 +4,11 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Mail, href: 'mailto:hello@portfolio.com', label: 'Email' },
+    { icon: Github, href: 'https://github.com/PruthvirajsinhMakwana', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/makwana-pruthvirajsinh-064113295/', label: 'LinkedIn' },
+    { icon: Twitter, href: 'https://www.facebook.com/pruthvirajsinh.makwana.12/', label: 'Facebook' },
+    { icon: Instagram, href: 'https://www.instagram.com/pruthvirajsinh__makwana/', label: 'Instagram' },
+    { icon: Mail, href: 'mailto:pruthvirajsinhpvt@gmail.com', label: 'Email' },
   ];
 
   const quickLinks = [
@@ -33,11 +33,11 @@ const Footer = () => {
               onClick={scrollToTop}
               className="text-2xl font-bold gradient-text hover:scale-105 transition-transform duration-300 inline-block mb-4"
             >
-              Creative Portfolio
+              PRUTHVIRAJ MAKWANA
             </button>
             <p className="text-muted-foreground leading-relaxed">
-              Crafting digital experiences through innovative design and development. 
-              Let's bring your vision to life.
+              B.Voc IT Student passionate about sports commentary and tech development. 
+              Leveling up daily in gaming and technology.
             </p>
           </div>
 
@@ -61,9 +61,9 @@ const Footer = () => {
           <div className="text-center md:text-right">
             <h3 className="text-lg font-semibold text-foreground mb-4">Get in Touch</h3>
             <div className="space-y-2 text-muted-foreground">
-              <p>hello@portfolio.com</p>
-              <p>+1 (555) 123-4567</p>
-              <p>San Francisco, CA</p>
+              <p>pruthvirajsinhpvt@gmail.com</p>
+              <p>+91 7016592727</p>
+              <p>Bopal, Ahmedabad, Gujarat</p>
             </div>
           </div>
         </div>
@@ -92,9 +92,9 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Copyright */}
             <div className="text-muted-foreground text-sm flex items-center gap-2">
-              © {currentYear} Creative Portfolio. Made with{' '}
+              © {currentYear} PRUTHVIRAJ MAKWANA. Made with{' '}
               <Heart size={16} className="text-red-500 animate-pulse" />{' '}
-              by John Doe
+              by Pruthviraj Makwana
             </div>
 
             {/* Legal Links */}

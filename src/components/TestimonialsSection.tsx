@@ -8,36 +8,36 @@ const TestimonialsSection = () => {
 
   const testimonials = [
     {
-      name: 'Sarah Johnson',
-      role: 'CEO, TechStartup',
-      avatar: 'SJ',
+      name: 'Arjun Patel',
+      role: 'Gaming Community Leader',
+      avatar: 'AP',
       rating: 5,
-      content: 'Absolutely incredible work! The design exceeded our expectations and the attention to detail was phenomenal. Our brand identity has never looked better.',
-      project: 'Brand Identity & Web Design'
+      content: 'Pruthviraj\'s commentary during our esports tournament was exceptional! His energy and technical knowledge made the event truly engaging for all viewers.',
+      project: 'Esports Commentary'
     },
     {
-      name: 'Michael Chen',
-      role: 'Marketing Director',
-      avatar: 'MC',
+      name: 'Ravi Shah',
+      role: 'Content Creator',
+      avatar: 'RS',
       rating: 5,
-      content: 'The video content created for our campaign was outstanding. The storytelling and visual effects were top-notch, resulting in a 300% increase in engagement.',
-      project: 'Video Production'
+      content: 'Amazing collaboration on our gaming content! Pruthviraj brings fresh perspectives and excellent technical skills to every project we work on together.',
+      project: 'Content Creation'
     },
     {
-      name: 'Emily Rodriguez',
-      role: 'Founder, E-commerce',
-      avatar: 'ER',
+      name: 'Khushi Sharma',
+      role: 'Student Coordinator',
+      avatar: 'KS',
       rating: 5,
-      content: 'Our e-commerce platform is now beautiful and functional. The user experience is seamless, and our conversion rates have increased significantly.',
-      project: 'Web Development'
+      content: 'Pruthviraj helped create our college website with such dedication and skill. His HTML and web development knowledge is impressive for a first-year student.',
+      project: 'Website Development'
     },
     {
-      name: 'David Thompson',
-      role: 'Creative Director',
-      avatar: 'DT',
+      name: 'Dharmi Joshi',
+      role: 'YouTube Manager',
+      avatar: 'DJ',
       rating: 5,
-      content: 'Working with this portfolio was a game-changer. The creative vision and technical execution were perfect. Highly recommend for any design project.',
-      project: 'Graphic Design'
+      content: 'Working with Pruthviraj on YouTube content has been fantastic! His gaming insights and technical expertise make him a valuable team member.',
+      project: 'YouTube Content'
     },
   ];
 

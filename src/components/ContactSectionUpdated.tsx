@@ -76,19 +76,19 @@ const ContactSectionUpdated = () => {
     {
       icon: MapPin,
       title: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Bopal, Ahmedabad, Gujarat',
       gradient: 'var(--gradient-primary)',
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '+1 (555) 123-4567',
+      value: '+91 7016592727',
       gradient: 'var(--gradient-secondary)',
     },
     {
       icon: Mail,
       title: 'Email',
-      value: 'hello@portfolio.com',
+      value: 'pruthvirajsinhpvt@gmail.com',
       gradient: 'var(--gradient-tertiary)',
     },
   ];
@@ -256,7 +256,7 @@ const ContactSectionUpdated = () => {
                 </div>
                 
                 <button 
-                  onClick={() => window.open('https://wa.me/your-number', '_blank')}
+                  onClick={() => window.open('https://wa.me/917016592727?text=Hello%20Pruthviraj!%20I%20would%20like%20to%20discuss%20a%20project%20with%20you.', '_blank')}
                   className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 inline-flex items-center justify-center gap-2"
                 >
                   <MessageCircle size={18} />

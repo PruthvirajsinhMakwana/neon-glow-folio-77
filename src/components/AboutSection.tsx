@@ -56,19 +56,19 @@ const AboutSection = () => {
                     }}
                   />
                   <div className="w-full h-full bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl items-center justify-center hidden">
-                    <div className="text-6xl gradient-text font-bold">JD</div>
+                    <div className="text-6xl gradient-text font-bold">PM</div>
                   </div>
                 </div>
               </div>
               
               {/* Floating stats - smaller on mobile */}
               <div className="absolute -top-3 -right-3 glass-card rounded-lg p-3 text-center">
-                <div className="text-xl font-bold gradient-text">5+</div>
-                <div className="text-xs text-muted-foreground">Years Exp</div>
+                <div className="text-xl font-bold gradient-text">1st</div>
+                <div className="text-xs text-muted-foreground">Year Student</div>
               </div>
               
               <div className="absolute -bottom-3 -left-3 glass-card rounded-lg p-3 text-center">
-                <div className="text-xl font-bold gradient-text">100+</div>
+                <div className="text-xl font-bold gradient-text">10+</div>
                 <div className="text-xs text-muted-foreground">Projects</div>
               </div>
             </div>
@@ -85,22 +85,23 @@ const AboutSection = () => {
             </h2>
             
             <p className="text-base text-muted-foreground mb-4 leading-relaxed">
-              I'm a passionate creative professional specializing in digital design, 
-              web development, and video production. With over 5 years of experience, 
-              I transform ideas into stunning visual experiences.
+              I'm a first-year B.Voc IT student with a passion for sports commentary and tech development. 
+              With hands-on experience in HTML, website development, and content creation, I'm eager to 
+              expand my technical expertise while enhancing my communication abilities.
             </p>
             
             <p className="text-base text-muted-foreground mb-6 leading-relaxed">
-              My journey combines technical expertise with artistic vision, creating 
-              solutions that not only look amazing but also deliver exceptional user experiences.
+              As a gamer, tech enthusiast, and esports host, I bring unique perspectives to digital media. 
+              I'm actively seeking opportunities to contribute and grow in both IT and digital media spaces, 
+              leveling up daily in the world of gaming and technology.
             </p>
 
             {/* Skills highlights - more compact */}
             <div className="grid grid-cols-3 gap-3 mb-6">
               {[
-                { icon: Palette, label: 'Design', color: 'text-primary' },
-                { icon: Code, label: 'Development', color: 'text-secondary' },
-                { icon: Video, label: 'Video Edit', color: 'text-accent' },
+                { icon: Code, label: 'HTML/CSS', color: 'text-primary' },
+                { icon: Video, label: 'Content Creation', color: 'text-secondary' },
+                { icon: Palette, label: 'Gaming/Esports', color: 'text-accent' },
               ].map(({ icon: Icon, label, color }) => (
                 <div key={label} className="glass-card rounded-lg p-3 text-center group hover:scale-105 transition-transform duration-300">
                   <Icon className={`w-6 h-6 mx-auto mb-2 ${color}`} />
@@ -110,7 +111,9 @@ const AboutSection = () => {
             </div>
 
             {/* Download Resume Button */}
-            <button className="neon-button text-background font-semibold inline-flex items-center gap-2 px-4 py-2 text-sm">
+            <button 
+              onClick={() => window.open('https://drive.google.com/file/d/1xlH8sLxyhcMHRfYDGJ_JLcyM3PVcvTqo/view?usp=sharing', '_blank')}
+              className="neon-button text-background font-semibold inline-flex items-center gap-2 px-4 py-2 text-sm">
               <Download size={18} />
               Download Resume
             </button>
