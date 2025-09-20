@@ -6,12 +6,16 @@ import ServicesSection from '@/components/ServicesSection';
 import PortfolioSection from '@/components/PortfolioSection';
 import SkillsSection from '@/components/SkillsSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
-import ContactSection from '@/components/ContactSection';
+import ContactSectionUpdated from '@/components/ContactSectionUpdated';
+import CursorTrail from '@/components/CursorTrail';
 import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
     <div className="relative">
+      {/* Cursor Trail Animation */}
+      <CursorTrail />
+      
       {/* Animated Background */}
       <AnimatedBackground />
       
@@ -26,7 +30,7 @@ const Index = () => {
         <PortfolioSection />
         <SkillsSection />
         <TestimonialsSection />
-        <ContactSection />
+        <ContactSectionUpdated />
       </main>
       
       {/* Footer */}

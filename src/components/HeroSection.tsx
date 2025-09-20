@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { ChevronDown, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
+import Hero3D from './Hero3D';
 
 const HeroSection = () => {
   const [textVisible, setTextVisible] = useState(false);
@@ -15,8 +16,15 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative z-10 px-4">
-      <div className="text-center max-w-4xl mx-auto">
+    <section className="min-h-screen flex items-center justify-center relative z-10 px-4 overflow-hidden">
+      {/* 3D Background */}
+      <div className="absolute inset-0 opacity-30">
+        <Suspense fallback={null}>
+          <Hero3D />
+        </Suspense>
+      </div>
+      
+      <div className="text-center max-w-4xl mx-auto relative z-20">
         {/* Main heading with split animation */}
         <div className="overflow-hidden mb-6">
           <h1 

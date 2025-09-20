@@ -82,7 +82,7 @@
 
   /* Neon glow button */
   .neon-button {
-    @apply relative overflow-hidden rounded-lg px-6 py-3 font-medium transition-all duration-300;
+    @apply relative overflow-hidden rounded-lg px-4 py-3 sm:px-6 font-medium transition-all duration-300;
     background: var(--gradient-primary);
     box-shadow: var(--glow-primary);
   }
@@ -93,7 +93,7 @@
   }
 
   .neon-button-secondary {
-    @apply relative overflow-hidden rounded-lg px-6 py-3 font-medium transition-all duration-300;
+    @apply relative overflow-hidden rounded-lg px-4 py-3 sm:px-6 font-medium transition-all duration-300;
     background: var(--gradient-secondary);
     box-shadow: var(--glow-secondary);
   }
@@ -106,6 +106,7 @@
   /* Animated gradient text */
   .gradient-text {
     background: var(--gradient-primary);
+    background-size: 200% 200%;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -155,11 +156,27 @@
     mask-composite: xor;
     animation: glow-pulse 2s ease-in-out infinite;
   }
+
+  /* Mobile responsive improvements */
+  @media (max-width: 768px) {
+    .glass-card {
+      @apply p-4;
+    }
+    
+    .neon-button,
+    .neon-button-secondary {
+      @apply px-4 py-2 text-sm;
+    }
+  }
 }
 
 @keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%, 100% { 
+    background-position: 0% 50%; 
+  }
+  50% { 
+    background-position: 100% 50%; 
+  }
 }
 
 @keyframes glow-pulse {
@@ -168,6 +185,7 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(-5px) rotate(-1deg); }
 }

@@ -59,29 +59,29 @@ const SkillsSection = () => {
 
   const CircularProgress = ({ percentage, name }: { percentage: number; name: string }) => {
     const animatedPercentage = animatedSkills[name] || 0;
-    const circumference = 2 * Math.PI * 45;
+    const circumference = 2 * Math.PI * 35; // Smaller radius
     const strokeDashoffset = circumference - (animatedPercentage / 100) * circumference;
 
     return (
-      <div className="relative w-32 h-32">
-        <svg className="w-32 h-32 transform -rotate-90" viewBox="0 0 100 100">
+      <div className="relative w-24 h-24 sm:w-28 sm:h-28">
+        <svg className="w-full h-full transform -rotate-90" viewBox="0 0 80 80">
           {/* Background circle */}
           <circle
-            cx="50"
-            cy="50"
-            r="45"
+            cx="40"
+            cy="40"
+            r="35"
             stroke="hsl(var(--muted))"
-            strokeWidth="8"
+            strokeWidth="6"
             fill="transparent"
             className="opacity-20"
           />
           {/* Progress circle */}
           <circle
-            cx="50"
-            cy="50"
-            r="45"
+            cx="40"
+            cy="40"
+            r="35"
             stroke="url(#gradient)"
-            strokeWidth="8"
+            strokeWidth="6"
             fill="transparent"
             strokeDasharray={circumference}
             strokeDashoffset={strokeDashoffset}
@@ -100,7 +100,7 @@ const SkillsSection = () => {
         
         {/* Percentage text */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-2xl font-bold gradient-text">
+          <span className="text-lg font-bold gradient-text">
             {animatedPercentage}%
           </span>
         </div>
@@ -112,26 +112,26 @@ const SkillsSection = () => {
     <section 
       id="skills" 
       ref={sectionRef}
-      className="py-20 px-4 relative z-10"
+      className="py-16 px-4 relative z-10"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div 
-          className={`text-center mb-16 transform transition-all duration-1000 ${
+          className={`text-center mb-12 transform transition-all duration-1000 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Skills & <span className="gradient-text">Expertise</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Technical proficiency and creative tools mastery
           </p>
         </div>
 
-        {/* Skills Progress Circles */}
+        {/* Skills Progress Circles - More compact */}
         <div 
-          className={`grid md:grid-cols-3 lg:grid-cols-6 gap-8 mb-16 transform transition-all duration-1000 delay-300 ${
+          className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 mb-12 transform transition-all duration-1000 delay-300 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
           }`}
         >
@@ -141,43 +141,45 @@ const SkillsSection = () => {
               className="text-center transform transition-all duration-1000"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <CircularProgress percentage={skill.percentage} name={skill.name} />
-              <h3 className="mt-4 font-semibold text-foreground">{skill.name}</h3>
-              <p className="text-sm text-muted-foreground">{skill.category}</p>
+              <div className="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto">
+                <CircularProgress percentage={skill.percentage} name={skill.name} />
+              </div>
+              <h3 className="mt-3 font-semibold text-foreground text-sm">{skill.name}</h3>
+              <p className="text-xs text-muted-foreground">{skill.category}</p>
             </div>
           ))}
         </div>
 
-        {/* Tools & Technologies */}
+        {/* Tools & Technologies - More compact */}
         <div 
           className={`transform transition-all duration-1000 delay-500 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
           }`}
         >
-          <h3 className="text-2xl font-bold text-center mb-8">Tools & Technologies</h3>
+          <h3 className="text-xl font-bold text-center mb-6">Tools & Technologies</h3>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {tools.map((tool, index) => (
               <div
                 key={tool.name}
-                className={`glass-card rounded-lg p-6 text-center hover:scale-105 transition-all duration-300 group transform ${
+                className={`glass-card rounded-lg p-4 text-center hover:scale-105 transition-all duration-300 group transform ${
                   isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
                 }`}
                 style={{ transitionDelay: `${600 + index * 50}ms` }}
               >
-                <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">
                   {tool.icon}
                 </div>
-                <h4 className="font-semibold text-foreground mb-1">{tool.name}</h4>
+                <h4 className="font-semibold text-foreground mb-1 text-sm">{tool.name}</h4>
                 <p className="text-xs text-muted-foreground">{tool.category}</p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Stats Row */}
+        {/* Stats Row - More compact */}
         <div 
-          className={`grid md:grid-cols-4 gap-8 mt-16 transform transition-all duration-1000 delay-700 ${
+          className={`grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 transform transition-all duration-1000 delay-700 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
           }`}
         >
@@ -187,9 +189,9 @@ const SkillsSection = () => {
             { number: '5+', label: 'Years Experience' },
             { number: '24/7', label: 'Support Available' },
           ].map((stat, index) => (
-            <div key={stat.label} className="text-center glass-card rounded-lg p-6">
-              <div className="text-3xl font-bold gradient-text mb-2">{stat.number}</div>
-              <div className="text-muted-foreground">{stat.label}</div>
+            <div key={stat.label} className="text-center glass-card rounded-lg p-4">
+              <div className="text-2xl font-bold gradient-text mb-2">{stat.number}</div>
+              <div className="text-muted-foreground text-sm">{stat.label}</div>
             </div>
           ))}
         </div>
