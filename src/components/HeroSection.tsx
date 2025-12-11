@@ -28,28 +28,17 @@ const HeroSection = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative z-10 px-4 overflow-hidden">
-      {/* Neon Purple Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/60 via-background to-purple-800/50" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-600/30 via-transparent to-transparent" />
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-primary/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-3xl" />
-      
-      {/* Spline 3D Background - Using iframe for better mobile support */}
-      <div className="absolute inset-0 z-[1]">
+      {/* Spline 3D Background Only */}
+      <div className="absolute inset-0 z-0">
         <iframe 
           src='https://my.spline.design/nexbotrobotcharacterconcept-y20nvhHc7Q3hKXih5ajpSIPb/' 
           frameBorder='0' 
           width='100%' 
           height='100%'
-          className="opacity-90 md:opacity-100 scale-110 md:scale-100"
           style={{ pointerEvents: 'none' }}
           title="3D Robot Animation"
         />
       </div>
-      
-      {/* Overlay gradient for text readability */}
-      <div className="absolute inset-0 z-[2] bg-gradient-to-t from-background via-transparent to-background/50" />
       
       <div className="text-center max-w-4xl mx-auto relative z-[10]">
         {/* Main heading with split animation */}
@@ -135,11 +124,6 @@ const HeroSection = () => {
         </button>
       </div>
 
-      {/* Floating elements */}
-      <div className="absolute top-1/4 left-10 w-20 h-20 rounded-full opacity-20 animate-float hidden lg:block"
-           style={{ background: 'var(--gradient-primary)' }} />
-      <div className="absolute bottom-1/4 right-10 w-16 h-16 rounded-full opacity-20 animate-float hidden lg:block"
-           style={{ background: 'var(--gradient-secondary)', animationDelay: '1s' }} />
     </section>
   );
 };
