@@ -1,6 +1,5 @@
-import { useEffect, useState, Suspense } from 'react';
-import { ChevronDown, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
-import Hero3D from './Hero3D';
+import { useEffect, useState } from 'react';
+import { ChevronDown, Github, Linkedin, Facebook, Instagram } from 'lucide-react';
 
 const HeroSection = () => {
   const [textVisible, setTextVisible] = useState(false);
@@ -10,6 +9,18 @@ const HeroSection = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    // Load Spline viewer script
+    const script = document.createElement('script');
+    script.type = 'module';
+    script.src = 'https://unpkg.com/@splinetool/viewer@1.12.9/build/spline-viewer.js';
+    document.head.appendChild(script);
+    
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   const scrollToNext = () => {
     const aboutSection = document.getElementById('about');
     aboutSection?.scrollIntoView({ behavior: 'smooth' });
@@ -17,12 +28,19 @@ const HeroSection = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative z-10 px-4 overflow-hidden">
-      {/* 3D Background */}
-      <div className="absolute inset-0 opacity-30">
-        <Suspense fallback={null}>
-          <Hero3D />
-        </Suspense>
-      </div>
+      {/* Neon Purple Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/40 via-background to-purple-800/30" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-600/20 via-transparent to-transparent" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-primary/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      
+      {/* Spline 3D Background */}
+      <div 
+        className="absolute inset-0 z-0"
+        dangerouslySetInnerHTML={{
+          __html: '<spline-viewer url="https://prod.spline.design/byqL6yiIBHRU2iwD/scene.splinecode" style="width: 100%; height: 100%;"></spline-viewer>'
+        }}
+      />
       
       <div className="text-center max-w-4xl mx-auto relative z-20">
         {/* Main heading with split animation */}
@@ -80,7 +98,7 @@ const HeroSection = () => {
           {[
             { icon: Github, href: 'https://github.com/PruthvirajsinhMakwana', label: 'GitHub' },
             { icon: Linkedin, href: 'https://www.linkedin.com/in/makwana-pruthvirajsinh-064113295/', label: 'LinkedIn' },
-            { icon: Twitter, href: 'https://www.facebook.com/pruthvirajsinh.makwana.12/', label: 'Facebook' },
+            { icon: Facebook, href: 'https://www.facebook.com/pruthvirajsinh.makwana.12/', label: 'Facebook' },
             { icon: Instagram, href: 'https://www.instagram.com/pruthvirajsinh__makwana/', label: 'Instagram' },
           ].map(({ icon: Icon, href, label }) => (
             <a
